@@ -26,7 +26,7 @@ app.get('/',async function(req,res){
 })
 
 // all product
-app.get('/allproduct',async function(req,res){
+app.get('/product',async function(req,res){
     let client= await MongoClient.connect(url);
     let dbo = client.db("toyDB");
     let results = await dbo.collection("myToy").find({}).toArray();
@@ -57,7 +57,7 @@ app.post('/doInsert',async (req,res)=>{
      let client= await MongoClient.connect(url);
      let dbo = client.db("toyDB");
      await dbo.collection("myToy").insertOne(newProducts);
-     res.redirect('/allproduct');
+     res.redirect('/product');
  })
  
 app.get('/delete',async (req,res)=>{
@@ -67,7 +67,7 @@ app.get('/delete',async (req,res)=>{
     var ObjectID = require('mongodb').ObjectID;
     let condition = {"_id" : ObjectID(inputId)};
     await dbo.collection("myToy").deleteOne(condition);
-    res.redirect('/allproduct');
+    res.redirect('/product');
 
 })
 
@@ -92,7 +92,7 @@ app.post('/doUpdate',async (req,res)=>{
     let condition = {"_id" : ObjectID(inputId)};
     let dbo = client.db("toyDB"); 
     await dbo.collection("myToy").updateMany(condition,Change);
-    res.redirect('/allproduct');
+    res.redirect('/product');
 })  
 
 const PORT = process.env.PORT || 3000;
