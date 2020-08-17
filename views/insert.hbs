@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Student</title>
+</head>
+<body>
+    <div id="container">
+    <div id="menu">
+      <ul>
+        <li><a href="allproduct">Home</a></li>
+        <li id="click"><a onclick="contact();">Contact</a></li>
+        <li id="click"><a onclick="about();">About</a></li>
+      </ul>
+      <script type="text/javascript">
+        function about(){
+        alert("Copyright by Mercury Shop 2020");
+        }
+      </script> <!--#script for About-->
+      <script type="text/javascript">
+        function contact(){
+        alert("Contact with us : 0986 989 340 ");
+        }
+      </script> <!--#script for Contact-->
+    </div> <!--#menu-->
+
+    <div class="form-insert">
+    <form action="/doInsert" method="post">
+    Name <input type="text" name="txtName" id="">
+    <br>
+    Price <input type="text" name="txtPrice" id="">
+    <br>
+    Brand <input type="text" name="txtBrand" id="">
+    <br>
+    <!--Nút insert-->
+    <input id="insert-button" type="submit" value="Insert"></form> 
+    <!--Nút cancel-->
+    <form action="/allproduct"> <input id="cancel-button" type="submit" value="Cancel"></form>
+    </div>
+    
+    <div id="footer">
+    Copyright &copy Mercury Shop - 2020 !
+    </div>
+</body>
+</html>

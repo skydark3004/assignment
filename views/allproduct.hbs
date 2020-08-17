@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>All Products</title>
+</head>
+<body>
+  <div id="container">
+    <div id="menu">
+      <ul>
+        <li><a href="allproduct">Home</a></li>
+        <li id="click"><a onclick="contact();">Contact</a></li>
+        <li id="click"><a onclick="about();">About</a></li>
+      </ul>
+      <script type="text/javascript">
+        function about(){
+          alert("Copyright by Mercury Shop 2020");
+        }
+      </script> <!--#script for About-->
+      <script type="text/javascript">
+        function contact(){
+          alert("Contact with us : 0986 989 340 ");
+        }
+      </script> <!--#script for Contact-->
+    </div> <!--#menu-->
+    <div class="search-at-menu">
+    <form action="/doSearch" method="post">
+    Search Brand <input type="text" name="txtBrand" id="" placeholder="Enter brand of phones">
+    <input type="submit" value="Search">
+    </form>
+    <br>
+    <a href="insert">Add New Toy</a>
+    </div>
+    <hr>
+    <table class="table bordered">
+        <thead>
+             <tr>
+              <th>Id</th>
+              <th>Name</th>
+              <th>Price</th>
+              <th>Brand</th>
+              <th>Delete</th>
+              <th>Edit</th>
+            </tr>
+        </thead>
+        {{#each model}}
+        <tr>
+            <td>{{_id}} </td>
+            <td>{{name}}</td>
+            <td>{{price}}</td>
+            <td>{{brand}}</td>
+            <td><a href="/delete?id={{_id}}">Delete</a></td>
+            <td><a href="/update?id={{_id}} ">Update</a></td>
+        </tr>
+        {{/each}}
+    </table>
+     <div id="footer">
+     Copyright &copy Mercury Shop - 2020
+   </div>
+
+</body>
+</html>

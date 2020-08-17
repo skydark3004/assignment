@@ -1,0 +1,106 @@
+*{
+    margin: 0;
+    padding: 0;
+  }
+  /* style for inline form */
+  form.frm_inline {
+    display: inline;
+  }
+  form.frm1 {
+    width: fit-content;
+    margin-top: 30px;
+  }
+  
+  /* Style for table */
+  .tbl {
+    margin-top: 30px;
+  }
+  
+  /*Style for form */
+  form.frm
+  {
+      border: 2px solid blue;
+      width: fit-content;
+      padding: 7px;
+      margin-top: 40px;
+  }
+  
+  form.frm123 {
+    width: fit-content; 
+    margin-top: 30px;
+  }
+  
+  #inp_login 
+  {
+      color: red;
+      font-weight: bold;
+      font-size: 15px;
+  }
+  
+  img {
+      margin-top: 30px;
+      margin-left: 400px;
+  }
+  
+  #menu ul{
+    background: #1F568B;
+    list-style-type: none;
+    text-align: center;
+  }
+  #menu ul li {
+    color: #f1f1f1;
+    display: inline-block;
+    width: 140px;
+    height: 70px;
+    line-height: 70px;
+    position: relative;
+    font-size: 16px;
+  }
+  #menu ul li a {
+    text-decoration: none;
+    color: #fff;
+    display: block;
+  }
+  #menu ul li a:hover {
+    background: #F1F1F1;
+    color: #333;
+  }
+  
+  #menu ul li >.sub-menu {
+  display: none;
+  position: absolute;
+  }
+  #menu ul li:hover .sub-menu {
+   display: block;
+  }
+  
+  #about{
+    cursor: pointer;
+  }
+  #footer{
+  
+    height: 50px;
+    line-height: 50px;
+    font-size: 18px;
+    margin : auto; 
+    background-image: linear-gradient(to top, #F1F1F1 0%, #97d9e1 100%);
+    background-repeat: no-repeat;
+    border-radius: 10%;
+    text-align: center;
+    text-transform: uppercase ;
+    font-family: timenewroman;
+    font-weight: 800;
+  }
+  
+  
+  @import url('https://fonts.googleapis.com/css?family=Amatic+SC');
+   
+  body {
+      margin: 0;
+      height: 100%;
+      background-image: linear-gradient(to top, #d9afd9 0%, #97d9e1 100%);
+      background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+ 

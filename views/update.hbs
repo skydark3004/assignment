@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update</title>
+</head>
+<body>
+    <div id="container">
+    <div id="menu">
+      <ul>
+        <li><a href="allproduct">Home</a></li>
+        <li id="click"><a onclick="contact();">Contact</a></li>
+        <li id="click"><a onclick="about();">About</a></li>
+      </ul>
+      <script type="text/javascript">
+        function about(){
+        alert("Copyright by Mercury Shop 2019");
+        }
+      </script> <!--#script for About-->
+      <script type="text/javascript">
+        function contact(){
+        alert("Contact with us : 0986 989 340 ");
+        }
+      </script> <!--#script for Contact-->
+    </div> <!--#menu-->
+
+    <div class="form-update">
+    <form action="/doUpdate" method="post">
+        {{#each model}}
+        <tr>
+            <td><input type="text" value= "{{_id}}" name = "txtId" id=""></td>
+            <td><input type="text" value= "{{name}}" name = "txtName" id=""></td>
+            <td><input type="text" value= "{{price}}" name = "txtPrice" id="" ></td>
+            <td><input type="text" value= "{{brand}}" name = "txtBrand" id=""></td>
+            <br>
+        </tr>      
+        {{/each}}
+        <input id="update-button2" type="submit" value="Update">
+        <form action="/allproduct"> <input id="cancel-button2" type="submit" value="Cancel"></form>
+    </form>
+    </div>
+</body>
+</html>

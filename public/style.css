@@ -1,0 +1,138 @@
+
+    * {
+  margin: 0;
+  padding: 0;
+}
+ 
+/*==Style cơ bản cho website==*/
+body {
+  background-color: #f8f0f0;;
+  font-family: timenewroman;
+  color: #333;
+}
+#container{
+  margin:auto;
+}
+#content{
+  background-color: #f8f0f0;;
+}
+#menu li {
+  color: #f1f1f1;
+  display: inline-block;
+  width: 120px;
+  height: 40px;
+  line-height: 40px;
+  margin-left: 10px;
+  font-size: 20px;
+  font-family: timenewroman, bold;
+  font-weight: 900;
+}
+
+#menu ul {
+  list-style-type: none;
+  text-align: center;
+   background: #031d74;
+   text-transform: uppercase;
+}
+#menu a {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+}
+#menu a:hover {
+  background: #F1F1F1;
+  color: #333;
+}
+#click
+{
+  cursor: pointer;
+}
+
+
+h1, h2, h3, h4, h5, h6{
+   font-size: 30px;
+  font-family: timenewroman, bold;
+  font-weight: 900;
+
+}
+
+
+#footer{
+  width: 1600px;
+  height: 50px;
+  line-height: 50px;
+  font-size: 18px;
+  margin : auto; 
+  background-image: linear-gradient(to top, #d9afd4 0%, #97d9e1 100%);
+  background-repeat: no-repeat;
+  border-radius: 10%;
+  text-align: center;
+}
+a.non-textdecoration{
+    color: red;
+    text-decoration: none;
+}
+a:hover{
+    color: red;
+    text-decoration: none;
+}
+th{
+       text-transform: uppercase;
+       font-size: 18px;
+       
+}
+input[type=text] {
+
+    padding: 5px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+  }
+  
+  input[type=submit] {
+  
+    background-color: #58257b;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+.form-insert{
+      margin-top: 100px;
+      margin-left: 700px;
+      margin-bottom: 100px;
+}
+#insert-button{
+      float: left;
+  }
+#cancel-button{
+      float: right;
+      margin-right: 600px;
+  }
+  
+.search-at-menu{
+    margin-left: 40px;
+    font-size: 16px;
+    font-family: timenewroman, bold;
+}
+
+.form-update{
+    margin-top: 100px;
+    margin-left: 400px;
+    margin-bottom: 100px;
+}
+
+#update-button{
+    float: left;
+}
+
+#cancel-button2{
+    float: right;
+    margin-right: 600px;
+}
+
+#update-button2{
+    float: left;
+    margin-left: 250px;
+}
