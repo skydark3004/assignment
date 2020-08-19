@@ -29,10 +29,13 @@
     <div class="form-insert">
     <form action="/doInsert" method="post">
     Name <input type="text" name="txtName" id="">
+    <th><label for="" style="color:rgb(8, 7, 7); blink: 1s">{{model.nameError}}</label></th>
     <br>
-    Price <input type="text" name="txtPrice" id="">
+    Price <input type="number" name="txtPrice" id="" >
+    <th><label for="" style="color:rgb(8, 7, 7); blink: 1s">{{model.priceError}}</label></th>
     <br>
     Brand <input type="text" name="txtBrand" id="">
+    <th><label for="" style="color:rgb(8, 7, 7); blink: 1s">{{model.brandError}}</label></th>
     <br>
     <!--Nút insert-->
     <input id="insert-button" type="submit" value="Insert"></form> 

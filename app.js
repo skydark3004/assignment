@@ -38,7 +38,8 @@ app.post('/doSearch',async (req,res)=>{
     let inputBrand = req.body.txtBrand;
     let client= await MongoClient.connect(url);
     let dbo = client.db("toyDB");
-    let results = await dbo.collection("myToy").find({brand: new RegExp(inputBrand)}).toArray();
+    //let results = await dbo.collection("myToy").find({brand: new RegExp(inputBrand)}).toArray(); //phân biệt in hoa in thường
+     let results = await dbo.collection("myToy").find({brand: new RegExp(inputBrand,'i')}).toArray(); // không phân biệt in hoa in thường
     res.render('allproduct',{model:results});
 
 })
@@ -50,15 +51,25 @@ app.get('/insert',(req,res)=>{
 
 // insert form
 app.post('/doInsert',async (req,res)=>{
-     let inputName = req.body.txtName;
-     let inputPrice = req.body.txtPrice;
-     let inputBrand = req.body.txtBrand;
-     let newProducts = { name : inputName , price : inputPrice , brand : inputBrand,};
-     let client= await MongoClient.connect(url);
-     let dbo = client.db("toyDB");
-     await dbo.collection("myToy").insertOne(newProducts);
-     res.redirect('/product');
- })
+    let inputName = req.body.txtName;
+    let inputPrice = req.body.txtPrice;
+    let inputBrand = req.body.txtBrand;
+    let newProducts = { name : inputName , price : inputPrice , brand : inputBrand,};
+    let client= await MongoClient.connect(url);
+    let dbo = client.db("toyDB");
+    if(inputName.trim().length == 0 || inputPrice.trim().length == 0 || inputBrand.trim().length == 0 )
+    {
+        let modelError = {nameError:"Please insert Name of Toy",
+                          priceError:"Please insert Price of Toy",
+                          brandError:"Please insert Brand of Toy"};
+        res.render('insert',{model:modelError});
+    }else
+    {     
+        await dbo.collection("myToy").insertOne(newProducts);
+        res.redirect('/product');
+    
+    }
+})
  
 app.get('/delete',async (req,res)=>{
     let inputId = req.query.id;
